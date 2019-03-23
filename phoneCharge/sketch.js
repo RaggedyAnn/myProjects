@@ -6,31 +6,39 @@ var prog = 15;
 var test = false;
 var time = 0;
 
+var button;
+var begin = false;
+
 function setup() {
   createCanvas(1440,2960);
   background(255);
   textSize(100);
+  button = createButton('start');
+  button.position(width/2, height/2);
+  button.mousePressed(start);
 
   frameRate(60);
 }
 
 function draw() {
-  background(255);
-  life(r,g);
-  battery();
+  if(begin) {
+    background(255);
+    life(r,g);
+    battery();
 
-  if(prog < 500) {
-    if(prog < 150) {
-      low();
+    if(prog < 500) {
+      if(prog < 150) {
+        low();
+      }
+      prog+=5;
+      var progR = map(prog,15,500,255,0);
+      r = progR;
+      var progG = map(prog,15,500,0, 255);
+      g = progG;
+      time = int(millis()/1000);
+    } else {
+      charged();
     }
-    prog+=5;
-    var progR = map(prog,15,500,255,0);
-    r = progR;
-    var progG = map(prog,15,500,0, 255);
-    g = progG;
-    time = int(millis()/1000);
-  } else {
-    charged();
   }
 
   if(test) {
@@ -39,6 +47,10 @@ function draw() {
   }
 }
 
+function start() {
+  begin = true;
+  button.hide();
+}
 //draws battery outline
 function battery() {
   noFill();
