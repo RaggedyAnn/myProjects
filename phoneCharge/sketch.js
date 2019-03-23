@@ -15,6 +15,7 @@ function setup() {
   textSize(100);
   button = createButton('start');
   button.position(width/2, height/2);
+  button.size(500,200);
   button.mousePressed(start);
 
   frameRate(60);
