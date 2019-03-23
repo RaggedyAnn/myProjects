@@ -11,7 +11,7 @@ function setup() {
   background(255);
   textSize(100);
 
-  frameRate(9);
+  frameRate(25);
 }
 
 function draw() {
