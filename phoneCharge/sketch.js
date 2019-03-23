@@ -19,7 +19,7 @@ function draw() {
   life(r,g);
   battery();
 
-  if(prog < 500) {
+  if(prog < 500 && (millis()/1000) > 5) {
     if(prog < 150) {
       low();
     }
