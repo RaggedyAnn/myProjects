@@ -1,7 +1,7 @@
 var r = 255;
 var g = 0;
 
-var prog = 15;
+var prog = 10;
 
 var test = false;
 var time = 0;
@@ -31,7 +31,7 @@ function draw() {
       if(prog < 150) {
         low();
       }
-      prog+=3;
+      prog+=2;
       var progR = map(prog,15,500,255,0);
       r = progR;
       var progG = map(prog,15,500,0, 255);
