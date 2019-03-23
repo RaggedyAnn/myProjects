@@ -31,7 +31,7 @@ function draw() {
       if(prog < 150) {
         low();
       }
-      prog+=5;
+      prog+=3;
       var progR = map(prog,15,500,255,0);
       r = progR;
       var progG = map(prog,15,500,0, 255);
