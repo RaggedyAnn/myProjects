@@ -14,7 +14,7 @@ function setup() {
   c = createCanvas(500,800);
 
   //input bar
-  var inp = createInput('Integer between 1 and 649');
+  var inp = createInput('');
   inp.position(20,20);
   inp.input(myEvent);
 
@@ -31,8 +31,6 @@ function draw() {
 function myEvent() {
   if (int(this.value()) >=0 && int(this.value()) <650) {
     pokeID = int(this.value());
-  } else {
-    this.value('Integer between 1 and 649');
   }
   background(255);
   text(specNGen(pokeID-1) + preEvolutions(pokeID-1) + nextEvolution(pokeID-1), width/2, height/2);
